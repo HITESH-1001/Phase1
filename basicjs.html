@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function clickme() {
+        document.getElementById("eev").innerHTML = "parachanged"
+      }
+    </script>
+    <!-- changing text -->
+    <p id="h">this is.</p>
+    <button
+      type="button"
+      onclick='document.getElementById("h").innerHTML="mee"'
+    >
+      click me
+    </button>
+
+    <!-- changing font size -->
+    <p id="sz">changing size of text</p>
+    <button
+      type="button"
+      onclick='document.getElementById("sz").style.fontSize="20px"'
+    >
+      click me
+    </button>
+    <br />
+    <!-- for displayin an element -->
+    <p id="dis" style="display: none">hello</p>
+    <button
+      type="button"
+      onclick="document.getElementById('dis').style.display='block'"
+    >
+      click me
+    </button>
+
+    <div id="oo" style="border: 2px solid red"></div>
+    <!-- script tag -->
+    <script>
+      document.getElementById("oo").innerHTML = "chaduko ra eripapa"
+    </script>
+
+    <!-- using functions to change the innerhtml -->
+    <p id="eev">hi para</p>
+    <button type="button" onclick="clickme()">click me</button>
+    <!-- java script output
+   innerHTML
+    document.write()
+    window.alert()
+    console.log() -->
+  </body>
+</html>

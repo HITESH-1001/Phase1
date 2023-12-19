@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Employee registration</title>
+	</head>
+	<link rel="stylesheet" href="ecse.css" />
+	<body>
+		<form>
+			<h2><b>Employee registration form</b></h2>
+			<br /><br />
+			<div>
+				<div>
+					<label for="firstname">Firstname</label>
+					<input
+						type="text"
+						name="firstname"
+						id="firstname"
+						placeholder="Eg. John"
+						required />
+				</div>
+				<br />
+				<div>
+					<label for="middlename">Middlename</label>
+					<input type="text" name="middlename" id="middlename" />
+				</div>
+				<br />
+				<div>
+					<label for="lastname">Lastname</label>
+					<input type="text" name="lastname" id="lastname" />
+				</div>
+				<br />
+				<div>
+					<label for="gender">Gender</label>
+					<input type="radio" name="gender" id="gender" />
+					<label for="gender">Male</label>
+					<input type="radio" name="gender" id="gender" />
+					<label for="gender">Female</label>
+					<input type="radio" name="gender" id="gender" />
+					<label for="gender">Other</label>
+				</div>
+				<br />
+				<div>
+					<label for="dob">Date of Birth</label>
+					<input type="date" name="dob" id="dob" />
+				</div>
+				<br />
+				<div>
+					<label for="number">Phone number</label>
+					<input type="number" name="number" id="number" required />
+				</div>
+				<br />
+				<div>
+					<label for="email">Email</label>
+					<input type="email" name="email" id="email" />
+				</div>
+				<br />
+				<div>
+					<label for="Qualification">Qualification</label>
+					<select name="Qualification" id="Qualification">
+						<option value="qual" disabled selected>Select Qualification</option>
+						<option value="degree">Degree</option>
+						<option value="Pg">PG</option>
+						<option value="ug">UG</option>
+					</select>
+				</div>
+				<br />
+				<div>
+					<label for="address">Address</label>
+					<textarea name="address" id="address" cols="20" rows="8"></textarea>
+				</div>
+				<br />
+				<button onclick="myFunc()">Submit</button>
+			</div>
+			<br />
+		</form>
+		<!--script to redirect to another webpage-->
+		<script>
+			function myFunc() {
+				window.location.href = "http://127.0.0.1:3000/nav.html";
+			}
+		</script>
+	</body>
+</html>

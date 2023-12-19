@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Finding Major Cities</title>
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .container {
+      width: 50%;
+      margin: 0 auto;
+    }
+
+    .search-bar {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+
+    .results {
+      list-style: none;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+
+    .result {
+      cursor: pointer;
+    }
+
+    .result:hover {
+      background-color: #eee;
+    }
+  </style>
+</head>
+<body>
+  <h1>Finding Major Cities</h1>
+  <div class="container">
+    <input type="text" class="search-bar" placeholder="Search for a city">
+    <ul class="results"></ul>
+  </div>
+
+  <script>
+    const searchBar = document.querySelector('.search-bar');
+    const results = document.querySelector('.results');
+
+    searchBar.addEventListener('keyup', function() {
+      const searchQuery = this.value;
+
+      // Make an API call to get the results for the search query
+      // and populate the results list
+
+      fetch('https://api.example.com/cities?search=' + searchQuery)
+        .then(response => response.json())
+        .then(data => {
+          results.innerHTML = '';
+
+          for (const city of data.cities) {
+            const result = document.createElement('li');
+            result.classList.add('result');
+            result.textContent = city.name;
+
+            results.appendChild(result);
+          }
+        });
+    });
+  </script>
+</body>
+</html>

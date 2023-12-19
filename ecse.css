@@ -1,0 +1,39 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+h2 {
+	text-align: center;
+}
+form {
+	width: 500px;
+	margin: auto;
+	padding: 8px;
+	background-image: linear-gradient(to right, #ff9966, #ff5e62);
+	height: 800px;
+}
+button {
+	width: 90px;
+	padding: 6px;
+	border-radius: 20px;
+	background-attachment: fixed;
+	background-image: linear-gradient(to right, #ff9966, #ff5e62);
+}
+input {
+	width: 100%;
+	outline: none;
+	border-radius: 20px;
+	/* border-bottom: 2px solid inherit; */
+	background: transparent;
+	padding: 8px;
+}
+textarea,
+select {
+	background-color: transparent;
+	border: 1px solid black;
+}
+
+input[type="radio"] {
+	width: 20px;
+}

@@ -1,0 +1,57 @@
+/* h1 {
+  color: blue;
+}
+* {
+  color: orange;
+}
+p {
+  color: brown;
+}
+button {
+  color: darkgoldenrod;
+  background-color: white;
+}
+body {
+  background-color: rgb(37, 26, 5);
+}
+#headingone {
+  color: #00ff00;
+}
+#headingtwo {
+  color: black;
+}
+.myclass {
+  color: crimson;
+} */
+div {
+  background-color: orange;
+}
+.heading {
+  background-color: red;
+}
+button {
+  background-color: green;
+}
+p {
+  text-align: start;
+  /* left or start is same meaning right =end */
+}
+h4 {
+  text-align: center;
+  text-decoration: underline;
+  /* overline=up line,line-through used for cuting word  */
+}
+h1 {
+  font-weight: 200;
+}
+
+h2 {
+  font-weight: 900;
+}
+#one {
+  font-size: 25px;
+}
+p {
+  line-height: 50px;
+  text-transform: lowercase;
+}

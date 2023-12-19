@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Weather Details</title>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<div class="container">
+			<h2>
+				Weather Details for {{ weather_data['name'] }}, {{
+				weather_data['sys']['country'] }}
+			</h2>
+			<p>Temperature: {{ weather_data['main']['temp'] }}&deg;K</p>
+			<p>Humidity: {{ weather_data['main']['humidity'] }}%</p>
+			<p>Weather: {{ weather_data['weather'][0]['description'] }}</p>
+			<a href="/">Go Back</a>
+		</div>
+	</body>
+</html>

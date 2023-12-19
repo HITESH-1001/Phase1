@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			html,
+			body {
+				height: 100%;
+				width: 100%;
+			}
+			#box {
+				height: 380px;
+				width: 300px;
+				background-color: rgb(200, 107, 0);
+				overflow: hidden;
+			}
+
+			#box img {
+				height: 380px;
+				width: 300px;
+				border: 2px solid black;
+				object-fit: cover;
+			}
+			#box:hover img {
+				transform: scale(1.5);
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<img
+				src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS14DfS8h_x394ZoTxXH3TrPXEWjKARw02eFQ&usqp=CAU"
+				alt="" />
+		</div>
+	</body>
+</html>

@@ -1,0 +1,42 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+html,
+body {
+	height: 100%;
+	width: 100%;
+}
+#main {
+	position: absolute;
+	height: 300px;
+	width: 300px;
+	background-color: lightseagreen;
+	animation: anime 2s;
+	animation-fill-mode: forwards;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	animation-direction: alternate;
+}
+
+@keyframes anime {
+	0% {
+		left: 0;
+		background-color: lightseagreen;
+		top: 0;
+		rotate: 0deg;
+	}
+	50% {
+		left: 75%;
+		background-color: lightgreen;
+		top: 0;
+		rotate: 360deg;
+	}
+	100% {
+		left: 75%;
+		background-color: salmon;
+		top: 55%;
+		rotate: 360deg;
+	}
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Weather App</title>
+		<link rel="stylesheet" href="styles.css" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+			rel="stylesheet" />
+		<video
+			id="myVideo"
+			src="https://v4.cdnpk.net/videvo_files/video/free/video0485/small_watermarked/_import_61a856c2bf2692.91352019_FPpreview.mp4"
+			loop
+			muted
+			autoplay></video>
+	</head>
+	<body>
+		<div class="container">
+			<h1>WEATHER FORECAST</h1>
+			<form action="/weather" method="POST">
+				<div class="input">
+					<input
+						type="text"
+						id="city"
+						name="city"
+						placeholder="Enter a City Name"
+						required />
+				</div>
+				<div class="btn">
+					<div class="gdl">
+						<button>Get Device Location</button>
+					</div>
+					<div class="gw">
+						<button class="b1" type="submit">Get Weather</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</body>
+</html>

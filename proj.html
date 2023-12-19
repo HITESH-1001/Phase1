@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>proj.html</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <meta name="generator" content="SynEdit HTML exporter" />
+    <style type="text/css">
+      body {
+        color: inherit;
+        background-image: linear-gradient(180deg, red, yellow, green, orange);
+      }
+      .cpp1-assembler {
+        color: #0000ff;
+      }
+      .cpp1-character {
+        color: #000000;
+      }
+      .cpp1-comment {
+        color: #0078d7;
+        font-style: italic;
+      }
+      .cpp1-float {
+        color: #800080;
+      }
+      .cpp1-hexadecimal {
+        color: #800080;
+      }
+      .cpp1-identifier {
+        color: #000000;
+      }
+      .cpp1-illegalchar {
+        color: #000000;
+      }
+      .cpp1-number {
+        color: #800080;
+      }
+      .cpp1-octal {
+        color: #800080;
+      }
+      .cpp1-preprocessor {
+        color: #008000;
+      }
+      .cpp1-reservedword {
+        color: #000000;
+        font-weight: bold;
+      }
+      .cpp1-space {
+        color: #000000;
+      }
+      .cpp1-string {
+        color: #0000ff;
+        font-weight: bold;
+      }
+      .cpp1-symbol {
+        color: #ff0000;
+        font-weight: bold;
+      }
+    </style>
+    <link rel="stylesheet" href="proj.css">
+  </head>
+  <body>
+    <pre>
+<div id="code"><span style="font: 15pt Consolas;"><span class="cpp1-preprocessor">#include&lt;conio.h&gt;
+#include&lt;graphics.h&gt;
+#include&lt;ctype.h&gt;
+#include&lt;dos.h&gt;
+#include&lt;string.h&gt;
+#include&lt;stdio.h&gt;
+#include&lt;iostream&gt;
+</span><span class="cpp1-comment">//functions
+</span><span class="cpp1-reservedword">void</span><span class="cpp1-space"> graphicspointer</span><span class="cpp1-symbol">(</span><span class="cpp1-reservedword">int</span><span class="cpp1-symbol">);
+</span><span class="cpp1-reservedword">void</span><span class="cpp1-space"> showindex</span><span class="cpp1-symbol">(</span><span class="cpp1-reservedword">void</span><span class="cpp1-symbol">);
+</span><span class="cpp1-reservedword">void</span><span class="cpp1-space"> graphicsinsertrear</span><span class="cpp1-symbol">(</span><span class="cpp1-reservedword">int</span><span class="cpp1-symbol">);
+</span><span class="cpp1-reservedword">void</span><span class="cpp1-space"> graphicsinsertfront</span><span class="cpp1-symbol">(</span><span class="cpp1-reservedword">int</span><span class="cpp1-symbol">);
+</span><span class="cpp1-reservedword">void</span><span class="cpp1-space"> graphicsdeletrear</span><span class="cpp1-symbol">(</span><span class="cpp1-reservedword">int</span><span class="cpp1-symbol">);
+</span><span class="cpp1-reservedword">void</span><span class="cpp1-space"> graphicsdeletfront</span><span class="cpp1-symbol">(</span><span class="cpp1-reservedword">int</span><span class="cpp1-symbol">);
+</span><span class="cpp1-reservedword">void</span><span class="cpp1-space"> graphicsboxmax</span><span class="cpp1-symbol">(</span><span class="cpp1-reservedword">int</span><span class="cpp1-symbol">);
+</span><span class="cpp1-reservedword">void</span><span class="cpp1-space"> graphicsdefault</span><span class="cpp1-symbol">(</span><span class="cpp1-reservedword">void</span><span class="cpp1-symbol">);
+</span><span class="cpp1-reservedword">char</span><span class="cpp1-space"> title</span><span class="cpp1-symbol">[</span><span class="cpp1-number">50</span><span class="cpp1-symbol">];
+</span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> f</span><span class="cpp1-symbol">=</span><span class="cpp1-number">0</span><span class="cpp1-symbol">,</span><span class="cpp1-identifier">r</span><span class="cpp1-symbol">=-</span><span class="cpp1-number">1</span><span class="cpp1-symbol">,</span><span class="cpp1-identifier">max</span><span class="cpp1-symbol">,</span><span class="cpp1-identifier">ele</span><span class="cpp1-symbol">,</span><span class="cpp1-identifier">j</span><span class="cpp1-symbol">=</span><span class="cpp1-number">0</span><span class="cpp1-symbol">,</span><span class="cpp1-identifier">d</span><span class="cpp1-symbol">=</span><span class="cpp1-number">0</span><span class="cpp1-symbol">,</span><span class="cpp1-identifier">i</span><span class="cpp1-symbol">,</span><span class="cpp1-identifier">p</span><span class="cpp1-symbol">,</span><span class="cpp1-identifier">flag</span><span class="cpp1-symbol">;
+</span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> dq</span><span class="cpp1-symbol">[</span><span class="cpp1-number">100</span><span class="cpp1-symbol">];
+</span><span class="cpp1-reservedword">void</span><span class="cpp1-space"> insertfront</span><span class="cpp1-symbol">(</span><span class="cpp1-reservedword">void</span><span class="cpp1-symbol">);
+</span><span class="cpp1-reservedword">void</span><span class="cpp1-space"> insertrear</span><span class="cpp1-symbol">(</span><span class="cpp1-reservedword">void</span><span class="cpp1-symbol">);
+</span><span class="cpp1-reservedword">void</span><span class="cpp1-space"> deletfront</span><span class="cpp1-symbol">(</span><span class="cpp1-reservedword">void</span><span class="cpp1-symbol">);
+</span><span class="cpp1-reservedword">void</span><span class="cpp1-space"> deletrear</span><span class="cpp1-symbol">(</span><span class="cpp1-reservedword">void</span><span class="cpp1-symbol">);
+</span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> main</span><span class="cpp1-symbol">()
+{
+
+</span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> gd</span><span class="cpp1-symbol">=</span><span class="cpp1-identifier">DETECT</span><span class="cpp1-symbol">,</span><span class="cpp1-identifier">gm</span><span class="cpp1-symbol">,</span><span class="cpp1-identifier">l</span><span class="cpp1-symbol">,</span><span class="cpp1-identifier">p</span><span class="cpp1-symbol">;
+</span><span class="cpp1-identifier">initgraph </span><span class="cpp1-symbol">(&amp;</span><span class="cpp1-identifier">gd</span><span class="cpp1-symbol">,&amp;</span><span class="cpp1-identifier">gm</span><span class="cpp1-symbol">,</span><span class="cpp1-space"> </span><span class="cpp1-symbol">(</span><span class="cpp1-reservedword">char</span><span class="cpp1-symbol">*)</span><span class="cpp1-string">&quot;&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-identifier">cleardevice</span><span class="cpp1-symbol">();
+</span><span class="cpp1-identifier">settextstyle</span><span class="cpp1-symbol">(</span><span class="cpp1-number">0</span><span class="cpp1-symbol">,</span><span class="cpp1-number">0</span><span class="cpp1-symbol">,</span><span class="cpp1-number">0</span><span class="cpp1-symbol">);
+</span><span class="cpp1-identifier">setbkcolor</span><span class="cpp1-symbol">(</span><span class="cpp1-number">0</span><span class="cpp1-symbol">);
+</span><span class="cpp1-identifier">strcpy</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">title</span><span class="cpp1-symbol">,</span><span class="cpp1-string">&quot;DEQUEUE SIMULATION&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-comment">//gotoxy(30,2);
+</span><span class="cpp1-identifier">printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;%s&quot;</span><span class="cpp1-symbol">,</span><span class="cpp1-identifier">title</span><span class="cpp1-symbol">);
+</span><span class="cpp1-identifier">printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n\n\nEnter the maximum number of elements-\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-identifier">scanf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;%d&quot;</span><span class="cpp1-symbol">,&amp;</span><span class="cpp1-identifier">max</span><span class="cpp1-symbol">);
+</span><span class="cpp1-identifier">cleardevice</span><span class="cpp1-symbol">();
+</span><span class="cpp1-identifier">graphicsdefault</span><span class="cpp1-symbol">();
+}
+</span><span class="cpp1-reservedword">void</span><span class="cpp1-space"> graphicsdefault</span><span class="cpp1-symbol">(</span><span class="cpp1-reservedword">void</span><span class="cpp1-symbol">)
+{
+</span><span class="cpp1-identifier">strcpy</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">title</span><span class="cpp1-symbol">,</span><span class="cpp1-string">&quot;DEQUEUE SIMULATION&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-comment">//gotoxy(30,2);
+</span><span class="cpp1-identifier">printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;%s&quot;</span><span class="cpp1-symbol">,</span><span class="cpp1-identifier">title</span><span class="cpp1-symbol">);
+</span><span class="cpp1-identifier">printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n\nHere's your Deueue\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-identifier">graphicsboxmax</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">max</span><span class="cpp1-symbol">);
+</span><span class="cpp1-identifier">graphicspointer</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">max</span><span class="cpp1-symbol">);
+</span><span class="cpp1-identifier">setcolor</span><span class="cpp1-symbol">(</span><span class="cpp1-number">15</span><span class="cpp1-symbol">);
+</span><span class="cpp1-reservedword">while</span><span class="cpp1-symbol">(</span><span class="cpp1-number">1</span><span class="cpp1-symbol">){
+</span><span class="cpp1-identifier">printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\nOperations : 1.Insertfront    2.insertrear   3.deletfront  4.deletrear 5.Exit\n\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-identifier">setfillstyle</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">SOLID_FILL</span><span class="cpp1-symbol">,</span><span class="cpp1-number">0</span><span class="cpp1-symbol">);
+</span><span class="cpp1-identifier">bar</span><span class="cpp1-symbol">(</span><span class="cpp1-number">0</span><span class="cpp1-symbol">,</span><span class="cpp1-number">192</span><span class="cpp1-symbol">,</span><span class="cpp1-number">1000</span><span class="cpp1-symbol">,</span><span class="cpp1-number">800</span><span class="cpp1-symbol">);
+</span><span class="cpp1-identifier">scanf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;%d&quot;</span><span class="cpp1-symbol">,&amp;</span><span class="cpp1-identifier">p</span><span class="cpp1-symbol">);
+</span><span class="cpp1-reservedword">switch</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">p</span><span class="cpp1-symbol">)
+{
+</span><span class="cpp1-reservedword">case</span><span class="cpp1-space"> </span><span class="cpp1-number">1</span><span class="cpp1-symbol">:</span><span class="cpp1-space"> </span><span class="cpp1-reservedword">if</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">f</span><span class="cpp1-symbol">!=</span><span class="cpp1-number">0</span><span class="cpp1-symbol">)
+{
+</span><span class="cpp1-identifier">insertfront</span><span class="cpp1-symbol">();
+}
+</span><span class="cpp1-reservedword">else
+</span><span class="cpp1-symbol">{
+</span><span class="cpp1-space">  printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;insertfront not feasible\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">  getch</span><span class="cpp1-symbol">();
+}
+</span><span class="cpp1-reservedword">break</span><span class="cpp1-symbol">;
+</span><span class="cpp1-reservedword">case</span><span class="cpp1-space"> </span><span class="cpp1-number">2</span><span class="cpp1-symbol">:</span><span class="cpp1-reservedword">if</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">r</span><span class="cpp1-symbol">&gt;=</span><span class="cpp1-identifier">max</span><span class="cpp1-symbol">-</span><span class="cpp1-number">1</span><span class="cpp1-symbol">)
+{
+</span><span class="cpp1-identifier">printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;insertion from rear not possible as queue is full\n&quot;</span><span class="cpp1-symbol">);
+}
+</span><span class="cpp1-reservedword">else
+</span><span class="cpp1-symbol">{
+</span><span class="cpp1-space">  insertrear</span><span class="cpp1-symbol">();
+</span><span class="cpp1-identifier">getch</span><span class="cpp1-symbol">();
+}
+</span><span class="cpp1-reservedword">break</span><span class="cpp1-symbol">;
+</span><span class="cpp1-reservedword">case</span><span class="cpp1-space"> </span><span class="cpp1-number">3</span><span class="cpp1-symbol">:</span><span class="cpp1-space"> </span><span class="cpp1-reservedword">if</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">r</span><span class="cpp1-symbol">!=-</span><span class="cpp1-number">1</span><span class="cpp1-symbol">)
+</span><span class="cpp1-space">	    deletfront</span><span class="cpp1-symbol">();
+</span><span class="cpp1-space">      </span><span class="cpp1-reservedword">else
+</span><span class="cpp1-space">	</span><span class="cpp1-symbol">{
+</span><span class="cpp1-space">	  printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;deletion from front not possible\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	  </span><span class="cpp1-comment">//sleep(2);
+</span><span class="cpp1-space">	</span><span class="cpp1-symbol">}
+</span><span class="cpp1-space">  </span><span class="cpp1-reservedword">break</span><span class="cpp1-symbol">;
+</span><span class="cpp1-reservedword">case</span><span class="cpp1-space"> </span><span class="cpp1-number">4</span><span class="cpp1-symbol">:</span><span class="cpp1-space">  </span><span class="cpp1-reservedword">if</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">r</span><span class="cpp1-symbol">!=-</span><span class="cpp1-number">1</span><span class="cpp1-symbol">)
+</span><span class="cpp1-space">	     deletrear</span><span class="cpp1-symbol">();
+</span><span class="cpp1-space">	</span><span class="cpp1-reservedword">else
+</span><span class="cpp1-space">	</span><span class="cpp1-symbol">{
+</span><span class="cpp1-space">	   printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;deletion from rear not possible\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	 </span><span class="cpp1-comment">// sleep(2);
+</span><span class="cpp1-symbol">}
+</span><span class="cpp1-space">	 </span><span class="cpp1-reservedword">break</span><span class="cpp1-symbol">;
+</span><span class="cpp1-reservedword">case</span><span class="cpp1-space"> </span><span class="cpp1-number">5</span><span class="cpp1-symbol">:</span><span class="cpp1-space"> </span><span class="cpp1-reservedword">break</span><span class="cpp1-symbol">;
+}
+}
+}
+</span><span class="cpp1-reservedword">void</span><span class="cpp1-space"> graphicsboxmax</span><span class="cpp1-symbol">(</span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> n</span><span class="cpp1-symbol">)
+{
+</span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> i</span><span class="cpp1-symbol">,</span><span class="cpp1-identifier">x1</span><span class="cpp1-symbol">;
+</span><span class="cpp1-identifier">x1</span><span class="cpp1-symbol">=</span><span class="cpp1-number">0</span><span class="cpp1-symbol">;
+</span><span class="cpp1-reservedword">for</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">i</span><span class="cpp1-symbol">=</span><span class="cpp1-number">1</span><span class="cpp1-symbol">;</span><span class="cpp1-identifier">i</span><span class="cpp1-symbol">&lt;=</span><span class="cpp1-identifier">n</span><span class="cpp1-symbol">;</span><span class="cpp1-identifier">i</span><span class="cpp1-symbol">++)
+{
+</span><span class="cpp1-identifier">rectangle</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">x1</span><span class="cpp1-symbol">,</span><span class="cpp1-number">150</span><span class="cpp1-symbol">,</span><span class="cpp1-identifier">x1</span><span class="cpp1-symbol">+</span><span class="cpp1-number">60</span><span class="cpp1-symbol">,</span><span class="cpp1-number">180</span><span class="cpp1-symbol">);
+</span><span class="cpp1-identifier">x1</span><span class="cpp1-symbol">=</span><span class="cpp1-identifier">x1</span><span class="cpp1-symbol">+</span><span class="cpp1-number">60</span><span class="cpp1-symbol">;
+}
+}
+
+</span><span class="cpp1-reservedword">void</span><span class="cpp1-space"> graphicspointer</span><span class="cpp1-symbol">(</span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> n</span><span class="cpp1-symbol">)
+{
+</span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> i</span><span class="cpp1-symbol">,</span><span class="cpp1-identifier">x1</span><span class="cpp1-symbol">;
+</span><span class="cpp1-identifier">x1</span><span class="cpp1-symbol">=</span><span class="cpp1-number">0</span><span class="cpp1-symbol">;
+</span><span class="cpp1-reservedword">for</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">i</span><span class="cpp1-symbol">=</span><span class="cpp1-number">1</span><span class="cpp1-symbol">;</span><span class="cpp1-identifier">i</span><span class="cpp1-symbol">&lt;=</span><span class="cpp1-identifier">n</span><span class="cpp1-symbol">;</span><span class="cpp1-identifier">i</span><span class="cpp1-symbol">++)
+{
+</span><span class="cpp1-identifier">setcolor</span><span class="cpp1-symbol">(</span><span class="cpp1-number">0</span><span class="cpp1-symbol">);
+</span><span class="cpp1-identifier">rectangle</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">x1</span><span class="cpp1-symbol">,</span><span class="cpp1-number">130</span><span class="cpp1-symbol">,</span><span class="cpp1-identifier">x1</span><span class="cpp1-symbol">+</span><span class="cpp1-number">60</span><span class="cpp1-symbol">,</span><span class="cpp1-number">140</span><span class="cpp1-symbol">);
+</span><span class="cpp1-identifier">x1</span><span class="cpp1-symbol">=</span><span class="cpp1-identifier">x1</span><span class="cpp1-symbol">+</span><span class="cpp1-number">60</span><span class="cpp1-symbol">;
+}
+</span><span class="cpp1-identifier">x1</span><span class="cpp1-symbol">=</span><span class="cpp1-number">0</span><span class="cpp1-symbol">;
+</span><span class="cpp1-reservedword">for</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">i</span><span class="cpp1-symbol">=</span><span class="cpp1-number">1</span><span class="cpp1-symbol">;</span><span class="cpp1-identifier">i</span><span class="cpp1-symbol">&lt;=</span><span class="cpp1-identifier">n</span><span class="cpp1-symbol">;</span><span class="cpp1-identifier">i</span><span class="cpp1-symbol">++)
+{
+</span><span class="cpp1-identifier">setcolor</span><span class="cpp1-symbol">(</span><span class="cpp1-number">0</span><span class="cpp1-symbol">);
+</span><span class="cpp1-identifier">rectangle</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">x1</span><span class="cpp1-symbol">,</span><span class="cpp1-number">120</span><span class="cpp1-symbol">,</span><span class="cpp1-identifier">x1</span><span class="cpp1-symbol">+</span><span class="cpp1-number">60</span><span class="cpp1-symbol">,</span><span class="cpp1-number">130</span><span class="cpp1-symbol">);
+</span><span class="cpp1-identifier">x1</span><span class="cpp1-symbol">=</span><span class="cpp1-identifier">x1</span><span class="cpp1-symbol">+</span><span class="cpp1-number">60</span><span class="cpp1-symbol">;
+}
+}
+</span><span class="cpp1-reservedword">void</span><span class="cpp1-space"> insertfront</span><span class="cpp1-symbol">(</span><span class="cpp1-reservedword">void</span><span class="cpp1-symbol">)
+{
+</span><span class="cpp1-identifier">printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;Enter the element to insert: &quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-identifier">scanf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;%d&quot;</span><span class="cpp1-symbol">,&amp;</span><span class="cpp1-identifier">ele</span><span class="cpp1-symbol">);
+</span><span class="cpp1-identifier">f</span><span class="cpp1-symbol">=</span><span class="cpp1-identifier">f</span><span class="cpp1-symbol">-</span><span class="cpp1-number">1</span><span class="cpp1-symbol">;
+</span><span class="cpp1-identifier">dq</span><span class="cpp1-symbol">[</span><span class="cpp1-identifier">f</span><span class="cpp1-symbol">]=</span><span class="cpp1-identifier">ele</span><span class="cpp1-symbol">;
+</span><span class="cpp1-identifier">graphicsinsertfront</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">ele</span><span class="cpp1-symbol">);
+</span><span class="cpp1-comment">//sleep(3);
+</span><span class="cpp1-identifier">graphicsdefault</span><span class="cpp1-symbol">();
+}
+</span><span class="cpp1-reservedword">void</span><span class="cpp1-space"> graphicsinsertfront</span><span class="cpp1-symbol">(</span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> a</span><span class="cpp1-symbol">)
+{
+</span><span class="cpp1-space">  sprintf</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">title</span><span class="cpp1-symbol">,</span><span class="cpp1-string">&quot;%d&quot;</span><span class="cpp1-symbol">,</span><span class="cpp1-identifier">a</span><span class="cpp1-symbol">);
+</span><span class="cpp1-identifier">setfillstyle</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">SOLID_FILL</span><span class="cpp1-symbol">,</span><span class="cpp1-identifier">d</span><span class="cpp1-symbol">);
+</span><span class="cpp1-identifier">bar</span><span class="cpp1-symbol">(</span><span class="cpp1-number">60</span><span class="cpp1-symbol">*(</span><span class="cpp1-identifier">d</span><span class="cpp1-symbol">-</span><span class="cpp1-number">1</span><span class="cpp1-symbol">),</span><span class="cpp1-number">151</span><span class="cpp1-symbol">,</span><span class="cpp1-number">60</span><span class="cpp1-symbol">*(</span><span class="cpp1-identifier">d</span><span class="cpp1-symbol">)-</span><span class="cpp1-number">1</span><span class="cpp1-symbol">,</span><span class="cpp1-number">179</span><span class="cpp1-symbol">);
+</span><span class="cpp1-identifier">outtextxy</span><span class="cpp1-symbol">(</span><span class="cpp1-number">30</span><span class="cpp1-symbol">+</span><span class="cpp1-number">60</span><span class="cpp1-symbol">*(</span><span class="cpp1-identifier">d</span><span class="cpp1-symbol">-</span><span class="cpp1-number">1</span><span class="cpp1-symbol">),</span><span class="cpp1-number">160</span><span class="cpp1-symbol">,</span><span class="cpp1-identifier">title</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space"> outtextxy</span><span class="cpp1-symbol">(</span><span class="cpp1-number">30</span><span class="cpp1-symbol">+</span><span class="cpp1-number">60</span><span class="cpp1-symbol">*(</span><span class="cpp1-identifier">d</span><span class="cpp1-symbol">-</span><span class="cpp1-number">1</span><span class="cpp1-symbol">),</span><span class="cpp1-number">124</span><span class="cpp1-symbol">,</span><span class="cpp1-string">&quot;f&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">  setfillstyle</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">SOLID_FILL</span><span class="cpp1-symbol">,</span><span class="cpp1-number">0</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">  bar</span><span class="cpp1-symbol">(</span><span class="cpp1-number">60</span><span class="cpp1-symbol">*</span><span class="cpp1-identifier">d</span><span class="cpp1-symbol">,</span><span class="cpp1-number">121</span><span class="cpp1-symbol">,</span><span class="cpp1-number">60</span><span class="cpp1-symbol">*(</span><span class="cpp1-identifier">d</span><span class="cpp1-symbol">+</span><span class="cpp1-number">1</span><span class="cpp1-symbol">),</span><span class="cpp1-number">129</span><span class="cpp1-symbol">);
+</span><span class="cpp1-identifier">d</span><span class="cpp1-symbol">=</span><span class="cpp1-identifier">d</span><span class="cpp1-symbol">-</span><span class="cpp1-number">1</span><span class="cpp1-symbol">;
+}
+</span><span class="cpp1-reservedword">void</span><span class="cpp1-space"> insertrear</span><span class="cpp1-symbol">(</span><span class="cpp1-reservedword">void</span><span class="cpp1-symbol">)
+
+{
+</span><span class="cpp1-space">  printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;Enter the element to insert: &quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-identifier">scanf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;%d&quot;</span><span class="cpp1-symbol">,&amp;</span><span class="cpp1-identifier">ele</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space"> r</span><span class="cpp1-symbol">=</span><span class="cpp1-identifier">r</span><span class="cpp1-symbol">+</span><span class="cpp1-number">1</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space"> dq</span><span class="cpp1-symbol">[</span><span class="cpp1-identifier">r</span><span class="cpp1-symbol">]=</span><span class="cpp1-identifier">ele</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space"> graphicsinsertrear</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">ele</span><span class="cpp1-symbol">);
+</span><span class="cpp1-comment">//sleep(3);
+</span><span class="cpp1-identifier">graphicsdefault</span><span class="cpp1-symbol">();
+}
+</span><span class="cpp1-reservedword">void</span><span class="cpp1-space"> graphicsinsertrear</span><span class="cpp1-symbol">(</span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> a</span><span class="cpp1-symbol">)
+{
+</span><span class="cpp1-identifier">sprintf</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">title</span><span class="cpp1-symbol">,</span><span class="cpp1-string">&quot;%d&quot;</span><span class="cpp1-symbol">,</span><span class="cpp1-identifier">a</span><span class="cpp1-symbol">);
+</span><span class="cpp1-identifier">setfillstyle</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">SOLID_FILL</span><span class="cpp1-symbol">,</span><span class="cpp1-identifier">j</span><span class="cpp1-symbol">+</span><span class="cpp1-number">1</span><span class="cpp1-symbol">);
+</span><span class="cpp1-identifier">bar</span><span class="cpp1-symbol">(</span><span class="cpp1-number">60</span><span class="cpp1-symbol">*</span><span class="cpp1-identifier">j</span><span class="cpp1-symbol">+</span><span class="cpp1-number">1</span><span class="cpp1-symbol">,</span><span class="cpp1-number">151</span><span class="cpp1-symbol">,</span><span class="cpp1-number">60</span><span class="cpp1-symbol">*(</span><span class="cpp1-identifier">j</span><span class="cpp1-symbol">+</span><span class="cpp1-number">1</span><span class="cpp1-symbol">)-</span><span class="cpp1-number">1</span><span class="cpp1-symbol">,</span><span class="cpp1-number">179</span><span class="cpp1-symbol">);
+</span><span class="cpp1-identifier">outtextxy</span><span class="cpp1-symbol">(</span><span class="cpp1-number">30</span><span class="cpp1-symbol">+</span><span class="cpp1-number">60</span><span class="cpp1-symbol">*</span><span class="cpp1-identifier">j</span><span class="cpp1-symbol">,</span><span class="cpp1-number">160</span><span class="cpp1-symbol">,</span><span class="cpp1-identifier">title</span><span class="cpp1-symbol">);
+</span><span class="cpp1-identifier">showindex</span><span class="cpp1-symbol">();
+</span><span class="cpp1-reservedword">if</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">f</span><span class="cpp1-symbol">==</span><span class="cpp1-number">0</span><span class="cpp1-symbol">&amp;&amp;</span><span class="cpp1-identifier">r</span><span class="cpp1-symbol">!=</span><span class="cpp1-identifier">max</span><span class="cpp1-symbol">)
+{
+</span><span class="cpp1-space">  outtextxy</span><span class="cpp1-symbol">(</span><span class="cpp1-number">30</span><span class="cpp1-symbol">+</span><span class="cpp1-number">60</span><span class="cpp1-symbol">*</span><span class="cpp1-identifier">d</span><span class="cpp1-symbol">,</span><span class="cpp1-number">124</span><span class="cpp1-symbol">,</span><span class="cpp1-string">&quot;f&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">  setfillstyle</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">SOLID_FILL</span><span class="cpp1-symbol">,</span><span class="cpp1-number">0</span><span class="cpp1-symbol">);
+</span><span class="cpp1-identifier">bar</span><span class="cpp1-symbol">(</span><span class="cpp1-number">60</span><span class="cpp1-symbol">*(</span><span class="cpp1-identifier">d</span><span class="cpp1-symbol">-</span><span class="cpp1-number">1</span><span class="cpp1-symbol">)+</span><span class="cpp1-number">1</span><span class="cpp1-symbol">,</span><span class="cpp1-number">121</span><span class="cpp1-symbol">,</span><span class="cpp1-number">60</span><span class="cpp1-symbol">*</span><span class="cpp1-identifier">d</span><span class="cpp1-symbol">,</span><span class="cpp1-number">129</span><span class="cpp1-symbol">);
+</span><span class="cpp1-identifier">setfillstyle</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">SOLID_FILL</span><span class="cpp1-symbol">,</span><span class="cpp1-number">0</span><span class="cpp1-symbol">);
+</span><span class="cpp1-identifier">bar</span><span class="cpp1-symbol">(</span><span class="cpp1-number">60</span><span class="cpp1-symbol">*(</span><span class="cpp1-identifier">j</span><span class="cpp1-symbol">-</span><span class="cpp1-number">1</span><span class="cpp1-symbol">)+</span><span class="cpp1-number">1</span><span class="cpp1-symbol">,</span><span class="cpp1-number">131</span><span class="cpp1-symbol">,</span><span class="cpp1-number">60</span><span class="cpp1-symbol">*</span><span class="cpp1-identifier">j</span><span class="cpp1-symbol">,</span><span class="cpp1-number">139</span><span class="cpp1-symbol">);
+</span><span class="cpp1-comment">//rear pointer
+</span><span class="cpp1-identifier">outtextxy</span><span class="cpp1-symbol">(</span><span class="cpp1-number">30</span><span class="cpp1-symbol">+</span><span class="cpp1-number">60</span><span class="cpp1-symbol">*</span><span class="cpp1-identifier">j</span><span class="cpp1-symbol">,</span><span class="cpp1-number">134</span><span class="cpp1-symbol">,</span><span class="cpp1-string">&quot;r&quot;</span><span class="cpp1-symbol">);
+}
+</span><span class="cpp1-identifier">j</span><span class="cpp1-symbol">=</span><span class="cpp1-identifier">j</span><span class="cpp1-symbol">+</span><span class="cpp1-number">1</span><span class="cpp1-symbol">;
+}
+</span><span class="cpp1-reservedword">void</span><span class="cpp1-space"> showindex</span><span class="cpp1-symbol">(</span><span class="cpp1-reservedword">void</span><span class="cpp1-symbol">)
+{
+</span><span class="cpp1-identifier">sprintf</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">title</span><span class="cpp1-symbol">,</span><span class="cpp1-string">&quot;%d&quot;</span><span class="cpp1-symbol">,</span><span class="cpp1-identifier">j</span><span class="cpp1-symbol">);
+</span><span class="cpp1-identifier">outtextxy</span><span class="cpp1-symbol">(</span><span class="cpp1-number">30</span><span class="cpp1-symbol">+</span><span class="cpp1-number">60</span><span class="cpp1-symbol">*</span><span class="cpp1-identifier">j</span><span class="cpp1-symbol">,</span><span class="cpp1-number">185</span><span class="cpp1-symbol">,</span><span class="cpp1-identifier">title</span><span class="cpp1-symbol">);
+}
+</span><span class="cpp1-reservedword">void</span><span class="cpp1-space"> deletfront</span><span class="cpp1-symbol">(</span><span class="cpp1-reservedword">void</span><span class="cpp1-symbol">)
+{
+</span><span class="cpp1-space">   </span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> x</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">   flag</span><span class="cpp1-symbol">=</span><span class="cpp1-identifier">r</span><span class="cpp1-symbol">+</span><span class="cpp1-identifier">f</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">   </span><span class="cpp1-reservedword">if</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">f</span><span class="cpp1-symbol">==</span><span class="cpp1-identifier">r</span><span class="cpp1-symbol">)
+</span><span class="cpp1-space">   </span><span class="cpp1-symbol">{
+</span><span class="cpp1-identifier">x</span><span class="cpp1-symbol">=</span><span class="cpp1-identifier">dq</span><span class="cpp1-symbol">[</span><span class="cpp1-identifier">f</span><span class="cpp1-symbol">];
+</span><span class="cpp1-identifier">f</span><span class="cpp1-symbol">=</span><span class="cpp1-number">0</span><span class="cpp1-symbol">;
+</span><span class="cpp1-identifier">r</span><span class="cpp1-symbol">=-</span><span class="cpp1-number">1</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">   </span><span class="cpp1-symbol">}
+</span><span class="cpp1-space">   </span><span class="cpp1-reservedword">else
+</span><span class="cpp1-space">   </span><span class="cpp1-symbol">{
+</span><span class="cpp1-identifier">x</span><span class="cpp1-symbol">=</span><span class="cpp1-identifier">dq</span><span class="cpp1-symbol">[</span><span class="cpp1-identifier">f</span><span class="cpp1-symbol">];
+</span><span class="cpp1-identifier">f</span><span class="cpp1-symbol">=(</span><span class="cpp1-identifier">f</span><span class="cpp1-symbol">+</span><span class="cpp1-number">1</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">   </span><span class="cpp1-symbol">}
+</span><span class="cpp1-space">   graphicsdeletfront</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">x</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">   graphicsdefault</span><span class="cpp1-symbol">();
+}
+</span><span class="cpp1-reservedword">void</span><span class="cpp1-space"> graphicsdeletfront</span><span class="cpp1-symbol">(</span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> x</span><span class="cpp1-symbol">)
+{
+</span><span class="cpp1-space">  setfillstyle</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">SOLID_FILL</span><span class="cpp1-symbol">,</span><span class="cpp1-number">0</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">  bar</span><span class="cpp1-symbol">(</span><span class="cpp1-number">60</span><span class="cpp1-symbol">*</span><span class="cpp1-identifier">d</span><span class="cpp1-symbol">+</span><span class="cpp1-number">1</span><span class="cpp1-symbol">,</span><span class="cpp1-number">151</span><span class="cpp1-symbol">,</span><span class="cpp1-number">60</span><span class="cpp1-symbol">*(</span><span class="cpp1-identifier">d</span><span class="cpp1-symbol">+</span><span class="cpp1-number">1</span><span class="cpp1-symbol">)-</span><span class="cpp1-number">1</span><span class="cpp1-symbol">,</span><span class="cpp1-number">179</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">      outtextxy</span><span class="cpp1-symbol">(</span><span class="cpp1-number">30</span><span class="cpp1-symbol">+</span><span class="cpp1-number">60</span><span class="cpp1-symbol">*(</span><span class="cpp1-identifier">d</span><span class="cpp1-symbol">+</span><span class="cpp1-number">1</span><span class="cpp1-symbol">),</span><span class="cpp1-number">124</span><span class="cpp1-symbol">,</span><span class="cpp1-string">&quot;f&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">       setfillstyle</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">SOLID_FILL</span><span class="cpp1-symbol">,</span><span class="cpp1-number">0</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">  bar</span><span class="cpp1-symbol">(</span><span class="cpp1-number">60</span><span class="cpp1-symbol">*</span><span class="cpp1-identifier">d</span><span class="cpp1-symbol">,</span><span class="cpp1-number">121</span><span class="cpp1-symbol">,</span><span class="cpp1-number">60</span><span class="cpp1-symbol">*(</span><span class="cpp1-identifier">d</span><span class="cpp1-symbol">+</span><span class="cpp1-number">1</span><span class="cpp1-symbol">),</span><span class="cpp1-number">129</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">  d</span><span class="cpp1-symbol">=</span><span class="cpp1-identifier">d</span><span class="cpp1-symbol">+</span><span class="cpp1-number">1</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">   printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;%d is deleted\n(Enter any key to continue)\n&quot;</span><span class="cpp1-symbol">,</span><span class="cpp1-identifier">x</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">   graphicsdefault</span><span class="cpp1-symbol">();
+</span><span class="cpp1-space">  getch</span><span class="cpp1-symbol">();
+</span><span class="cpp1-space">  </span><span class="cpp1-reservedword">return</span><span class="cpp1-symbol">;
+}
+</span><span class="cpp1-reservedword">void</span><span class="cpp1-space"> deletrear</span><span class="cpp1-symbol">(</span><span class="cpp1-reservedword">void</span><span class="cpp1-symbol">)
+{
+</span><span class="cpp1-space">   </span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> x</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">   flag</span><span class="cpp1-symbol">=</span><span class="cpp1-identifier">r</span><span class="cpp1-symbol">+</span><span class="cpp1-identifier">f</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">   </span><span class="cpp1-reservedword">if</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">f</span><span class="cpp1-symbol">==</span><span class="cpp1-identifier">r</span><span class="cpp1-symbol">)
+</span><span class="cpp1-space">   </span><span class="cpp1-symbol">{
+</span><span class="cpp1-identifier">x</span><span class="cpp1-symbol">=</span><span class="cpp1-identifier">dq</span><span class="cpp1-symbol">[</span><span class="cpp1-identifier">f</span><span class="cpp1-symbol">];
+</span><span class="cpp1-identifier">f</span><span class="cpp1-symbol">=</span><span class="cpp1-number">0</span><span class="cpp1-symbol">;
+</span><span class="cpp1-identifier">r</span><span class="cpp1-symbol">=-</span><span class="cpp1-number">1</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">   </span><span class="cpp1-symbol">}
+</span><span class="cpp1-space">   </span><span class="cpp1-reservedword">else
+</span><span class="cpp1-space">   </span><span class="cpp1-symbol">{
+</span><span class="cpp1-identifier">x</span><span class="cpp1-symbol">=</span><span class="cpp1-identifier">dq</span><span class="cpp1-symbol">[</span><span class="cpp1-identifier">r</span><span class="cpp1-symbol">];
+</span><span class="cpp1-identifier">r</span><span class="cpp1-symbol">=(</span><span class="cpp1-identifier">r</span><span class="cpp1-symbol">-</span><span class="cpp1-number">1</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">   </span><span class="cpp1-symbol">}
+</span><span class="cpp1-space">   graphicsdeletrear</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">x</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">   graphicsdefault</span><span class="cpp1-symbol">();
+}
+</span><span class="cpp1-reservedword">void</span><span class="cpp1-space"> graphicsdeletrear</span><span class="cpp1-symbol">(</span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> x</span><span class="cpp1-symbol">)
+{
+</span><span class="cpp1-space">  setfillstyle</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">SOLID_FILL</span><span class="cpp1-symbol">,</span><span class="cpp1-number">0</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">     bar</span><span class="cpp1-symbol">(</span><span class="cpp1-number">60</span><span class="cpp1-symbol">*(</span><span class="cpp1-identifier">j</span><span class="cpp1-symbol">-</span><span class="cpp1-number">1</span><span class="cpp1-symbol">),</span><span class="cpp1-number">151</span><span class="cpp1-symbol">,</span><span class="cpp1-number">60</span><span class="cpp1-symbol">*</span><span class="cpp1-identifier">j</span><span class="cpp1-symbol">,</span><span class="cpp1-number">179</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">       outtextxy</span><span class="cpp1-symbol">(</span><span class="cpp1-number">30</span><span class="cpp1-symbol">+</span><span class="cpp1-number">60</span><span class="cpp1-symbol">*(</span><span class="cpp1-identifier">j</span><span class="cpp1-symbol">-</span><span class="cpp1-number">2</span><span class="cpp1-symbol">),</span><span class="cpp1-number">134</span><span class="cpp1-symbol">,</span><span class="cpp1-string">&quot;r&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">      j</span><span class="cpp1-symbol">=</span><span class="cpp1-identifier">j</span><span class="cpp1-symbol">-</span><span class="cpp1-number">1</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">	setfillstyle</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">SOLID_FILL</span><span class="cpp1-symbol">,</span><span class="cpp1-number">0</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">      bar</span><span class="cpp1-symbol">(</span><span class="cpp1-number">60</span><span class="cpp1-symbol">*(</span><span class="cpp1-identifier">j</span><span class="cpp1-symbol">),</span><span class="cpp1-number">131</span><span class="cpp1-symbol">,</span><span class="cpp1-number">60</span><span class="cpp1-symbol">*(</span><span class="cpp1-identifier">j</span><span class="cpp1-symbol">+</span><span class="cpp1-number">1</span><span class="cpp1-symbol">),</span><span class="cpp1-number">139</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">   printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;%d is deleted\n(Enter any key to continue)\n&quot;</span><span class="cpp1-symbol">,</span><span class="cpp1-identifier">x</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">    graphicsdefault</span><span class="cpp1-symbol">();
+</span><span class="cpp1-space">  getch</span><span class="cpp1-symbol">();
+}
+
+</span></span> </div>
+</code></pre>
+<form action="Output.docx" method="get">
+    <div>
+      <button
+        type="button"
+        style="
+          background-color: inherit;
+          width: 300px;
+          border-radius: 40px;
+          font-size: 20px;
+        "
+      >
+        RUN
+      </button>
+    </div></form>
+    <!-- <form action="Output.docx" method="get">
+      <input type="submit"/>
+    </form> -->
+    <script></script>
+  </body>
+</html>

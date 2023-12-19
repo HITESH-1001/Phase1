@@ -1,0 +1,23 @@
+{
+	"sqltools.connections": [
+		{
+			"mysqlOptions": {
+				"authProtocol": "default",
+				"enableSsl": "Disabled"
+			},
+			"previewLimit": 50,
+			"server": "localhost",
+			"port": 3306,
+			"driver": "MySQL",
+			"name": "localhost",
+			"database": "hiteshdb",
+			"username": "root"
+		}
+	],
+	"prettier.bracketSameLine": true,
+	"prettier.endOfLine": "lf",
+	"cSpell.words": ["HITESH", "lineanime", "pwinput", "togglepasswordbutton"],
+	"prettier.useTabs": true,
+	"prettier.vueIndentScriptAndStyle": true,
+	"editor.fontLigatures": true
+}

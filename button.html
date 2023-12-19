@@ -1,0 +1,73 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			.b1 {
+				font-size: 18px;
+				font-weight: 700;
+				border-radius: 3px;
+				padding: 10px 20px;
+				margin: 20px;
+				border: 2px solid black;
+				color: #fff;
+				background-color: lightseagreen;
+				transition: all ease 0.5s;
+			}
+			.b1:hover {
+				box-shadow: 5px 5px 0px black;
+			}
+
+			h1 {
+				position: absolute;
+				border: 5px solid black;
+				font-size: 5rem;
+			}
+			h1::before {
+				content: "";
+				display: block;
+				position: absolute;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				top: 0;
+				background: hsl(200, 100%, 80%);
+				transform: scaleX(0);
+				transition: transform 0.3s ease;
+				z-index: -1;
+				transform-origin: right;
+			}
+			h1:hover::before {
+				transform: scaleX(1);
+				transform-origin: left;
+			}
+
+			button {
+				position: relative;
+				overflow: hidden;
+				padding: 10px;
+				color: #070606;
+			}
+			button::after {
+				content: "";
+				display: block;
+				height: 4px;
+				width: 100%;
+				background-color: lightseagreen;
+				transform: scale(0);
+				transform-origin: left;
+				transition: transform 0.4s ease;
+			}
+			button:hover::after {
+				transform: scaleX(1);
+			}
+		</style>
+	</head>
+	<body>
+		<button class="b1">HoverMe</button>
+		<h1>HoverMe</h1>
+		<button class="b2">HoverMe</button>
