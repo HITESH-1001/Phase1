@@ -16,7 +16,16 @@
 	],
 	"prettier.bracketSameLine": true,
 	"prettier.endOfLine": "lf",
-	"cSpell.words": ["HITESH", "lineanime", "pwinput", "togglepasswordbutton"],
+	"cSpell.words": [
+		"adipisicing",
+		"amet",
+		"elit",
+		"fullname",
+		"HITESH",
+		"lineanime",
+		"pwinput",
+		"togglepasswordbutton"
+	],
 	"prettier.useTabs": true,
 	"prettier.vueIndentScriptAndStyle": true,
 	"editor.fontLigatures": true
